@@ -1,3 +1,5 @@
+## Laravel API Boilerplate 
+
 ## Features
 Laravel API Boilerplate project provides a lot of features out of the box. Here's an overview of the included features.
 

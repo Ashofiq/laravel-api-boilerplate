@@ -1,0 +1,76 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use DB;
+
+class DivisionSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return vodivision_id
+     */
+    public function run()
+    {
+        DB::table('divisions')->insert([
+            [
+              "division_id" => "1",
+              "name" => "Barishal",
+              "bn_name" => "বরিশাল",
+              "lat" => "22.701002",
+              "long" => "90.353451"
+            ],
+            [
+              "division_id" => "2",
+              "name" => "Chattogram",
+              "bn_name" => "চট্টগ্রাম",
+              "lat" => "22.356851",
+              "long" => "91.783182"
+            ],
+            [
+              "division_id" => "3",
+              "name" => "Dhaka",
+              "bn_name" => "ঢাকা",
+              "lat" => "23.810332",
+              "long" => "90.412518"
+            ],
+            [
+              "division_id" => "4",
+              "name" => "Khulna",
+              "bn_name" => "খুলনা",
+              "lat" => "22.845641",
+              "long" => "89.540328"
+            ],
+            [
+              "division_id" => "5",
+              "name" => "Rajshahi",
+              "bn_name" => "রাজশাহী",
+              "lat" => "24.363589",
+              "long" => "88.624135"
+            ],
+            [
+              "division_id" => "6",
+              "name" => "Rangpur",
+              "bn_name" => "রংপুর",
+              "lat" => "25.743892",
+              "long" => "89.275227"
+            ],
+            [
+              "division_id" => "7",
+              "name" => "Sylhet",
+              "bn_name" => "সিলেট",
+              "lat" => "24.894929",
+              "long" => "91.868706"
+            ],
+            [
+              "division_id" => "8",
+              "name" => "Mymensingh",
+              "bn_name" => "ময়মনসিংহ",
+              "lat" => "24.747149",
+              "long" => "90.420273"
+            ]
+          ]);
+    }
+}

@@ -1,0 +1,181 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "DoyalBaba ecommerce",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/auth/v1/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Doyalbaba login",
+                "operationId": "69b4b7da857a88e2270a0a77507bd653",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/auth/v1/registration": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Doyalbaba Registration",
+                "operationId": "deb365e13ee0cc9eb6d26769a377e94a",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Enter Name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Enter Email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Enter Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Enter user type",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "customer",
+                                    "vendor",
+                                    "admin"
+                                ]
+                            },
+                            "default": "customer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/v1/me": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Auth Check",
+                "operationId": "356e7d100be5b721bce5b2f7d8dfdc77",
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/all-user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Doyalbaba User",
+                "operationId": "614d41faae18e0d75a6894f7ad3cd59c",
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/helper": {
+            "get": {
+                "tags": [
+                    "help"
+                ],
+                "summary": "Doyalbaba User",
+                "operationId": "6044d3ac8179afc654e351f70ee0ff92",
+                "responses": {
+                    "201": {
+                        "description": "success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

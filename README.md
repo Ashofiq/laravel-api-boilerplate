@@ -19,7 +19,8 @@ Laravel API Boilerplate project provides a lot of features out of the box. Here'
 We use Swegger for Api Documentation, for more https://github.com/DarkaOnLine/L5-Swagger
 
 if you update documentation then run this command 
-    php artisan l5-swagger:generate    
+
+    - php artisan l5-swagger:generate    
 
 ### versioning Folder Structure
 
